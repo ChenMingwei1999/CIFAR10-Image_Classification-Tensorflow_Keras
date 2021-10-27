@@ -1,0 +1,29 @@
+<RCC>
+  <qresource>
+    <file>icons/left.png</file>
+    <file>icons/left1.png</file>
+    <file>icons/left1_touch.png</file>
+    <file>icons/right.png</file>
+    <file>icons/right_touch.png</file>
+    <file>icons/right1.png</file>
+    <file>icons/right1_touch.png</file>
+    <file>icons/up.png</file>
+    <file>icons/up_touch.png</file>
+    <file>icons/up1.png</file>
+    <file>icons/up1_touch.png</file>
+    <file>icons/down.png</file>
+    <file>icons/down_touch.png</file>
+    <file>icons/down1.png</file>
+    <file>icons/down1_touch.png</file>
+    <file>icons/AlexNet.png</file>
+    <file>icons/GoogLenet.png</file>
+    <file>icons/ResNet.png</file>
+    <file>icons/VGGNet.png</file>
+    <file>icons/LeNet-5.png</file>
+    <file>icons/bg.png</file>
+    <file>icons/exit.png</file>
+    <file>icons/minimize.png</file>
+    <file>icons/open.png</file>
+    <file>icons/predict.png</file>
+  </qresource>
+</RCC>
