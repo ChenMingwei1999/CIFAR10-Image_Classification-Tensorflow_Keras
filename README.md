@@ -1,8 +1,8 @@
- ## Image Classification：Classical CNN Models Trained on CIFAR-10
+ # Image Classification：Classical CNN Models Trained on CIFAR-10
  
 在本仓库中，通过 Tensorflow 的 Keras 框架搭建了五种经典的卷积神经网络模型，并在 CIFAR-10 数据集上进行训练、测试和评估；使用训练得到的模型，通过 PyQt 开发了一款交互式的图像分类软件；通过调整网络模型的超参数，观察并研究其产生的影响。
  
- ## 目录
+ # 目录
 
 
 <!-- TOC -->
@@ -111,7 +111,7 @@
 # 3 数据集
 CIFAR-10 数据集是一个用于识别普适物体的小型数据集，它包含 10 个类别、60000 张大小为 32×32 的彩色 RGB 图像，每类各 6000 张图。其中测试集共 10000 张，单独构成一批，在每一类中随机取 1000 张单独组成；训练集由剩下的随机排列组成，共 50000 张，构成了 5 个训练批，每一批 10000 张图，值得注意的是，一个训练批中的各类图像的数量不一定相同。
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/cifar10.jpg" width=500></div>
 
 * [CIFAR-10 数据集官网](http://www.cs.toronto.edu/~kriz/cifar.html)
 * CIFAR-10 数据集导入
@@ -196,11 +196,11 @@ val_loss = history.history['val_loss']
 ## 4.1 LeNet-5
 * 网络介绍
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/LeNet-5_architecture.jpg" width=500></div>
 
 * 训练结果
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/LeNet5.jpg" width=500></div>
 
 * 论文参考
   
@@ -209,11 +209,11 @@ val_loss = history.history['val_loss']
 ## 4.2 AlexNet
 * 网络介绍
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/AlexNet_architecture.jpg" width=500></div>
 
 * 训练结果
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/AlexNet.jpg" width=500></div>
 
 
 * 论文参考
@@ -223,11 +223,11 @@ val_loss = history.history['val_loss']
 ## 4.3 VGGNet
 * 网络介绍
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/VGG16_architecture.jpg" width=500></div>
 
 * 训练结果
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/VGGNet.jpg" width=500></div>
 
 * 论文参考
   
@@ -236,11 +236,13 @@ val_loss = history.history['val_loss']
 ## 4.4 GoogLeNet
 * 网络介绍
 
-（图片）
+<div align=center><img src="https://github.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/blob/master/image/screenshot_image/Inception%20module_architecture.jpg" width=500></div>
+
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/GoogLeNet_architecture.jpg" width=500></div>
 
 * 训练结果
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/GoogLeNet.jpg" width=500></div>
 
 * 论文参考
   
@@ -249,11 +251,13 @@ val_loss = history.history['val_loss']
 ## 4.5 ResNet
 * 网络介绍
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/Residual_block_architecture.jpg" width=500></div>
+
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/ResNet18_architecture.jpg" width=500></div>
 
 * 训练结果
 
-（图片）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/ResNet.jpg" width=500></div>
 
 * 论文参考
   
@@ -272,16 +276,16 @@ val_loss = history.history['val_loss']
   
   点击 <kbd></kbd> 按钮显示预测结果，结果输出 10 个类别中概率最大的类别
 
-（图片1）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/software_1.jpg" width=500></div>
 
-（图片2）
+<div align=center><img src="https://github.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/blob/master/image/screenshot_image/software_2.jpg" width=500></div>
 
 ## 5.2 测试数据
 项目提供了用于软件测试的数据，它们由 CIFAR-10 数据集的 10 个类别组成，每个类别各有 5 张图。在选取制作这些图像时，遵从了同一类别中颜色、视角、背景、图像大小等存在一定差异的规则，避免图像相似度过高。
 
-（图片1）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/test_images_show.jpg" width=500></div>
 
-（图片2）
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/test_images_airplane_show.jpg" width=500></div>
 
 ## 5.3 常见问题
 * Q：分类预测时软件卡顿，等待时间过长
