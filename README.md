@@ -40,13 +40,13 @@
 
 # 1 项目简介
 ## 1.1 主要工作
-* 通过 Tensorflow 的 Keras 框架搭建了 LeNet-5、AlexNet、VGGNet 、GoogLeNet、ResNet 五种卷积网络模型
-* 在 CIFAR-10 数据集上对上述五个网络进行训练、测试和评估，得到 Accuracy 和 Loss 曲线
-* 使用训练得到的模型，通过 PyQt 开发了一款交互式图像分类软件
-* 调整 GoogLeNet 模型的学习率、优化器、损失函数、激活函数、批尺寸、回合数六种超参数，观察并研究其产生的影响
+* 通过 Tensorflow 的 Keras 框架搭建了 **LeNet-5**、**AlexNet**、**VGGNet** 、**GoogLeNet**、**ResNet** 五种卷积网络模型
+* 在 **CIFAR-10 数据集**上对上述五个网络进行训练、测试和评估，得到 **Accuracy** 和 **Loss** 曲线
+* 使用训练得到的模型，通过 PyQt 开发了一款**交互式图像分类软件**
+* 调整 GoogLeNet 模型的**学习率**、**优化器**、**损失函数**、**激活函数**、**批尺寸**、**回合数**六种超参数，观察并研究其产生的影响
 
 ## 1.2 文件结构
-```python
+```
 ├── Readme.md                      // 项目介绍
 ├── LICENSE                        // 许可证
 ├── .idea                          // 项目配置信息
@@ -107,7 +107,7 @@
 
 
 # 3 数据集
-CIFAR-10 数据集是一个用于识别普适物体的小型数据集，它包含 10 个类别、60000 张大小为 32×32 的彩色 RGB 图像，每类各 6000 张图。其中测试集共 10000 张，单独构成一批，在每一类中随机取 1000 张单独组成；训练集由剩下的随机排列组成，共 50000 张，构成了 5 个训练批，每一批 10000 张图，值得注意的是，一个训练批中的各类图像的数量不一定相同。
+CIFAR-10 数据集是一个用于识别普适物体的小型数据集，它包含 **10** 个类别、**60000** 张大小为 **32×32** 的彩色 RGB 图像，每类各 6000 张图。其中测试集共 10000 张，单独构成一批，在每一类中随机取 1000 张单独组成；训练集由剩下的随机排列组成，共 50000 张，构成了 5 个训练批，每一批 10000 张图，值得注意的是，**一个训练批中的各类图像的数量不一定相同**。
 
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/cifar10.jpg" width=500></div>
 
@@ -128,7 +128,7 @@ cifar10 = tf.keras.datasets.cifar10
 `y_test`：测试集标签，取值范围为 0-9 ，形状为 (10000, 1)
 
 # 4 网络模型搭建、训练、测试与评估
-虽然五种网络模型在结构和应用表现上各不相同，但它们拥有相似的搭建、训练、测试和评估流程，在 Tensorflow 的 Keras 框架下，整个过程主要分为以下五步：
+虽然五种网络模型在结构和应用表现上各不相同，但它们拥有相似的搭建、训练、测试和评估流程，在 **Tensorflow 的 Keras 框架**下，整个过程主要分为以下五步：
 * Step1. 定义网络类，搭建模型各层结构，初始化模型
 ```python
 class ModelName(Model):
@@ -162,7 +162,7 @@ history = model.fit(x_train, y_train,
                     validation_data = (x_test, y_test),
                     validation_freq = 1)
 ```
-值得一提的是，对于训练参数过多、训练时间久的模型，或是训练可能被中断，可通过回调函数实现断点续训功能，保存当前训练结果，在下次训练时直接读取并继续训练。
+值得一提的是，对于训练参数过多、训练时间久的模型，或是训练可能被中断，可通过回调函数实现**断点续训**功能，保存当前训练结果，在下次训练时直接读取并继续训练。
 ```python
 cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_save_path,
                                                  save_weights_only=True,
@@ -194,7 +194,7 @@ val_loss = history.history['val_loss']
 ## 4.1 LeNet-5
 * 网络介绍
 
-LeNet-5 是卷积神经网络的祖师爷 LeCun 在 1998 年提出的，用于解决手写数字识别的视觉任务，它是卷积神经网络早期最有代表性的网络之一。LeNet-5 网络共有 5 层，其中包括 3 层卷积层，2 层全连接层。
+LeNet-5 是卷积神经网络的祖师爷 LeCun 在 1998 年提出的，用于解决手写数字识别的视觉任务，它是卷积神经网络早期最有代表性的网络之一。LeNet-5 网络共有 **5** 层，其中包括 **3** 层卷积层，**2** 层全连接层。您可以运行`LeNet5.py`训练该网络。
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/LeNet-5_architecture.jpg" width=500></div>
 
 * 训练结果
@@ -209,7 +209,7 @@ LeNet-5 是卷积神经网络的祖师爷 LeCun 在 1998 年提出的，用于�
 ## 4.2 AlexNet
 * 网络介绍
 
-AlexNet 是 2012 年 ImageNet 竞赛冠军获得者 Hinton 和他的学生 Alex Krizhevsky 设计的。它首次在卷积神经网络中成功应用了 ReLU、Dropout 和 LRN 等技巧。同时使用了 GPU 进行运算加速。AlexNet 网络共有 8 层，其中包括 5 层卷积层，3 层全连接层。
+AlexNet 是 2012 年 ImageNet 竞赛冠军获得者 Hinton 和他的学生 Alex Krizhevsky 设计的。它首次在卷积神经网络中成功应用了 ReLU、Dropout 和 LRN 等技巧。同时使用了 GPU 进行运算加速。AlexNet 网络共有 **8** 层，其中包括 **5** 层卷积层，**3** 层全连接层。您可以运行`AlexNet.py`训练该网络。
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/AlexNet_architecture.jpg" width=500></div>
 
 * 训练结果
@@ -225,7 +225,7 @@ AlexNet 是 2012 年 ImageNet 竞赛冠军获得者 Hinton 和他的学生 Alex 
 ## 4.3 VGGNet
 * 网络介绍
 
-VGGNet 是由 Simonyan 和 Zisserman 在 2014 年提出的模型。它反复堆叠 3 × 3 的小型卷积核和 2 × 2 的池化核，形成 5 段卷积，使得模型在架构上更深更宽的同时，计算量的增加规模放缓。VGGNet-16 网络共有 16 层，其中包括 13 层卷积层，3 层全连接层。
+VGGNet 是由 Simonyan 和 Zisserman 在 2014 年提出的模型。它反复堆叠 3 × 3 的小型卷积核和 2 × 2 的池化核，形成 5 段卷积，使得模型在架构上更深更宽的同时，计算量的增加规模放缓。VGGNet-16 网络共有 **16** 层，其中包括 **13** 层卷积层，**3** 层全连接层。您可以运行`VGGNet.py`训练该网络。
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/VGG16_architecture.jpg" width=500></div>
 
 * 训练结果
@@ -240,10 +240,10 @@ VGGNet 是由 Simonyan 和 Zisserman 在 2014 年提出的模型。它反复堆�
 ## 4.4 GoogLeNet
 * 网络介绍
 
-GoogLeNet 是 2014年 Christian Szegedy 设计的一种全新的网络结构，它提出了 inception 模块的概念，模块使用了 1 x 1 的卷积进行升降维，并在多个尺寸上同时进行卷积再聚合。
+GoogLeNet 是 2014年 Christian Szegedy 设计的一种全新的网络结构，它提出了 inception 模块的概念，模块使用了 **1 x 1** 的卷积进行升降维，并在多个尺寸上同时进行卷积再聚合。
 <div align=center><img src="https://github.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/blob/master/image/screenshot_image/Inception%20module_architecture.jpg" width=500></div>
 
-GoogLeNet 由九个这样的 inception 模块串联起来，每个模块有 2 层，加上开头的 3 层卷积层和输出前的 1 层全连接层，整个网络共有 22 层。
+GoogLeNet 由九个这样的 inception 模块串联起来，每个模块有 **2** 层，加上开头的 **3** 层卷积层和输出前的 **1** 层全连接层，整个网络共有 **22** 层。您可以运行`GoogLeNet.py`训练该网络。
 
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/GoogLeNet_architecture.jpg" width=500></div>
 
@@ -259,7 +259,7 @@ GoogLeNet 由九个这样的 inception 模块串联起来，每个模块有 2 �
 ## 4.5 ResNet
 * 网络介绍
 
-ResNet 是由来自 Microsoft Research 的 4 位学者于 2015 年提出的卷积神经网络，它提出了残差单元的概念，其使用跳跃连接，将浅层网络的输出加给深层网络的输出，缓解了在深度神经网络中增加深度带来的梯度消失问题。残差网络的特点是容易优化，并且能够通过增加相当的深度来提高准确率。
+ResNet 是由来自 Microsoft Research 的 4 位学者于 2015 年提出的卷积神经网络，它提出了残差单元的概念，其使用跳跃连接，将浅层网络的输出加给深层网络的输出，缓解了在深度神经网络中增加深度带来的梯度消失问题。残差网络的特点是容易优化，并且能够通过增加相当的深度来提高准确率。您可以运行`ResNet.py`训练该网络。
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/Residual_block_architecture.jpg" width=500></div>
 
 
@@ -279,7 +279,7 @@ ResNet 是由来自 Microsoft Research 的 4 位学者于 2015 年提出的卷�
 ## 5.1 使用说明
 * Step1. 导入图片
   
-  点击 <kbd><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/icons/open.png" width=30></kbd> 按钮打开一张图片，图片显示在左边区域
+  运行`main.py`打开软件。点击 <kbd><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/icons/open.png" width=30></kbd> 按钮打开一张图片，图片显示在左边区域
 * Step2. 选择模型
   
   右上区域有五种分类模型供选择，默认选择为 LeNet-5
@@ -334,7 +334,11 @@ learning rate | tra_acc | val_acc | tra_loss | val_loss | time |
   
 <div><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/different%20learning%20rate.jpg" width=500></div>
 
-* 分析发现
+* 结果分析
+
+学习率从 0.0001 增长到 0.001 的过程中，模型分类的准确度在不断提升；后来增加到 0.003 时，效果反而下降；甚至学习率取 0.1 时，曲线近乎成了一条直线。
+
+初始学习率需要选定一个恰当的值，并不是越大或者越小就越好。如果过低，可能导致训练过慢，需要很久才能到达很好的效果；如果过高，将很可能陷入局部极小值，无法跳出。
 
 ## 6.2 优化器
 改变优化器类型，保持其他超参数不变，具体取值如下表：
@@ -361,7 +365,9 @@ optimizer | tra_acc | val_acc | tra_loss | val_loss | time |
   
 <div><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/different%20optimizer.jpg" width=500></div>
 
-* 分析发现
+* 结果分析
+
+从图中可以看到，选择 Adam 与 RMSprop 作为优化器的模型效果要远好于其他三种。但这往往不是绝对的，由于只研究单一变量，固定的初始学习率 0.001 可能并不适用于部分优化器，但从整体和大量实践经验来看，Adam 确实是收敛速度和效果都很不错的选择。
 
 ## 6.3 损失函数
 改变损失函数类型，保持其他超参数不变，具体取值如下表：
@@ -386,7 +392,9 @@ loss function | tra_acc | val_acc | tra_loss | val_loss | time |
  
  <div><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/different%20loss%20function.jpg" width=500></div>
  
- * 分析发现
+ * 结果分析
+ 
+从图中可以看到，均方误差 Mean Squared Error 和 二分类交叉熵 Binary CrossEntropy 损失函数的模型效果远不如 多分类交叉熵损失函数 Sparse Categorical CrossEntropy. 这是由于本项目是一个图像多分类问题，而前两者分别常用于回归问题和二分类问题中，所以根据机器学习具体应用场景选择对应的损失函数很重要，否则效果差距将非常大。
  
 ## 6.4 激活函数
 改变激活函数类型，保持其他超参数不变，具体取值如下表：
@@ -411,7 +419,11 @@ activation function | tra_acc | val_acc | tra_loss | val_loss | time |
  
  <div><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/different%20activation%20function.jpg" width=500></div>
  
- * 分析发现
+ * 结果分析
+
+从结果可以看出，三种激活函数在本项目的效果上排序为：ReLu > Tanh > Sigmoid. 
+
+Sigmoid 是最早的传统激活函数之一，它的缺点是很容易使梯度消失；Tanh 具有中心对称性，但也面临着梯度消失的风险，但它的性能和收敛速度比 Sigmoid 要略胜一筹；Relu 是深度学习实际应用中最广泛的激活函数，由于其在 x 大于 0 时导数恒为 1 ，所以不存在梯度消失的问题，收敛速度也远快于另两者。当然，现在已经有很多对 Relu 函数的改进和变形，如Leaky Relu、ELU等，  Relu 存在的一些缺点做了改进。
  
 ## 6.5 批尺寸
 改变批尺寸大小，保持其他超参数不变，具体取值如下表：
@@ -438,7 +450,12 @@ batch-size | tra_acc | val_acc | tra_loss | val_loss | time |
 
  <div><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/different%20batch-size.jpg" width=500></div>
  
- * 分析发现
+ * 结果分析
+
+从整体上看，批尺寸从 16 增长到 256 的过程中，模型的准确度在不断下降，损失在上升，训练时间很明显变少，但这并不意味着大的 batch-size 训练出来的模型效果就不好。
+ 
+大的 batch-size 往往下降方向准确，曲线震荡小，图中效果不好的原因是训练时间还不够长，在同样的 epoch 下参数更新较少，需要更多的回合数训练，同时大的 batch-size 容易陷入局部最优；小的 batch-size 虽然在较少 epoch 内效果好，但引入的随机性较大，会导致曲线震荡较大，不利于模型收敛，因此批大小也需要慎重选择一个合适的值。
+
 ## 6.6 回合数
 改变回合数大小，保持其他超参数不变，具体取值如下表：
 
@@ -463,8 +480,11 @@ epoch | tra_acc | val_acc | tra_loss | val_loss | time |
 
  <div><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/different%20epoch.jpg" width=500></div>
  
- * 分析发现
+ * 结果分析
 
+随着训练回合数增多，模型训练时间增长。从训练集看，准确率持续上升，损失持续下降；从验证集上看，一开始走向与训练集相同，但达到一定回合后（图中约为 15），准确率几乎不再提升甚至有下降趋势，而损失在增长。
+ 
+这说明模型发生了过拟合的现象，即随着训练回合加深，虽然在训练集上表现很好，但在测试集上表现却不尽人意。所以在深度学习模型训练过程中，绘制 epoch 与 accuracy、loss 的关系曲线，有助于帮助我们及时了解模型的状态以采取必要的措施。
 
 # 版权许可
 整个项目在MIT许可下发布（详细请参阅 [许可证](https://github.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/blob/master/LICENSE) 文件）
