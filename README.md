@@ -196,12 +196,18 @@ val_loss = history.history['val_loss']
 ## 4.1 LeNet-5
 * 网络介绍
 
+<<<<<<< HEAD
 LeNet-5 是卷积神经网络的祖师爷 LeCun 在 1998 年提出的，用于解决手写数字识别的视觉任务，它是卷积神经网络早期最有代表性的网络之一。LeNet-5 网络共有 5 层，其中包括 3 层卷积层，2 层全连接层。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/LeNet-5_architecture.jpg" width=500></div>
 
 * 训练结果
 
+<<<<<<< HEAD
 从变化趋势上看，训练集与测试集的 accuracy 在不断上升，loss 在不断下降；从分类效果上看，测试集 accuracy 只达到了 52% 左右，模型分类效果有待提升。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/LeNet5.jpg" width=500></div>
 
 * 论文参考
@@ -211,12 +217,18 @@ LeNet-5 是卷积神经网络的祖师爷 LeCun 在 1998 年提出的，用于�
 ## 4.2 AlexNet
 * 网络介绍
 
+<<<<<<< HEAD
 AlexNet 是 2012 年 ImageNet 竞赛冠军获得者 Hinton 和他的学生 Alex Krizhevsky 设计的。它首次在卷积神经网络中成功应用了 ReLU、Dropout 和 LRN 等技巧。同时使用了 GPU 进行运算加速。AlexNet 网络共有 8 层，其中包括 5 层卷积层，3 层全连接层。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/AlexNet_architecture.jpg" width=500></div>
 
 * 训练结果
 
+<<<<<<< HEAD
 从变化趋势上看，训练集表现正常，其 accuracy 在不断上升，loss 在不断下降，而测试集出现了比较大的震荡，可能需要对学习率和批大小等超参数进行调整，但整体趋势与训练集表现相同；从分类效果上看，测试集 accuracy 达到了 66% 左右，模型分类效果仍有待提升。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/AlexNet.jpg" width=500></div>
 
 
@@ -227,12 +239,18 @@ AlexNet 是 2012 年 ImageNet 竞赛冠军获得者 Hinton 和他的学生 Alex 
 ## 4.3 VGGNet
 * 网络介绍
 
+<<<<<<< HEAD
 VGGNet 是由 Simonyan 和 Zisserman 在 2014 年提出的模型。它反复堆叠 3 × 3 的小型卷积核和 2 × 2 的池化核，形成 5 段卷积，使得模型在架构上更深更宽的同时，计算量的增加规模放缓。VGGNet-16 网络共有 16 层，其中包括 13 层卷积层，3 层全连接层。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/VGG16_architecture.jpg" width=500></div>
 
 * 训练结果
 
+<<<<<<< HEAD
 从变化趋势上看，训练集表现正常，其 accuracy 在不断上升，loss 在不断下降，而测试集出现了好几次震荡，但整体趋势与训练集表现相同，在训练后期，accuracy 有下降趋势且loss有上升趋势，模型即将过拟合；从分类效果上看，测试集 accuracy 达到了 79% 左右，较前两个模型有显著提升。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/VGGNet.jpg" width=500></div>
 
 * 论文参考
@@ -242,16 +260,24 @@ VGGNet 是由 Simonyan 和 Zisserman 在 2014 年提出的模型。它反复堆�
 ## 4.4 GoogLeNet
 * 网络介绍
 
+<<<<<<< HEAD
 GoogLeNet 是 2014年 Christian Szegedy 设计的一种全新的网络结构，它提出了 inception 模块的概念，模块使用了 1 x 1 的卷积进行升降维，并在多个尺寸上同时进行卷积再聚合。
 <div align=center><img src="https://github.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/blob/master/image/screenshot_image/Inception%20module_architecture.jpg" width=500></div>
 
 GoogLeNet 由九个这样的 inception 模块串联起来，每个模块有 2 层，加上开头的 3 层卷积层和输出前的 1 层全连接层，整个网络共有 22 层。
 
+=======
+<div align=center><img src="https://github.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/blob/master/image/screenshot_image/Inception%20module_architecture.jpg" width=500></div>
+
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/GoogLeNet_architecture.jpg" width=500></div>
 
 * 训练结果
 
+<<<<<<< HEAD
 从变化趋势上看，训练集与测试集的 accuracy 在不断上升，loss 在不断下降，测试集上的loss 下降速率逐渐趋于 0 ；从分类效果上看，测试集 accuracy 达到了 73% 左右，对于此模型来说仍然有待优化的空间，您可以调整相关超参数以提高模型分类效果。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/GoogLeNet.jpg" width=500></div>
 
 * 论文参考
@@ -261,15 +287,23 @@ GoogLeNet 由九个这样的 inception 模块串联起来，每个模块有 2 �
 ## 4.5 ResNet
 * 网络介绍
 
+<<<<<<< HEAD
 ResNet 是由来自 Microsoft Research 的 4 位学者于 2015 年提出的卷积神经网络，它提出了残差单元的概念，其使用跳跃连接，将浅层网络的输出加给深层网络的输出，缓解了在深度神经网络中增加深度带来的梯度消失问题。残差网络的特点是容易优化，并且能够通过增加相当的深度来提高准确率。
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/Residual_block_architecture.jpg" width=500></div>
 
 
+=======
+<div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/Residual_block_architecture.jpg" width=500></div>
+
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/screenshot_image/ResNet18_architecture.jpg" width=500></div>
 
 * 训练结果
 
+<<<<<<< HEAD
 从变化趋势上看，训练集 accuracy 在不断上升甚至达到 95%左右，loss 在不断下降，而测试集在训练前期的 accuracy 和 loss 就已经开始收敛，其后期 accuracy 有下降趋势且loss有上升趋势，模型表现为过拟合；从分类效果上看，测试集 accuracy 达到了 80% 左右，但由于模型过拟合，需要重新调整再训练。
+=======
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
 <div align=center><img src="https://raw.githubusercontent.com/ChenMingwei1999/CIFAR10-Image_Classification-Tensorflow_Keras/master/image/evaluation%20metric_image/ResNet.jpg" width=500></div>
 
 * 论文参考
@@ -463,4 +497,8 @@ epoch | tra_acc | val_acc | tra_loss | val_loss | time |
 # 更新日志
 :date: 2021-10-27：训练了五种卷积网络模型，开发了一款 CIFAR-10 图像分类软件
 
+<<<<<<< HEAD
 :date: 2021-11-09：通过调整 GoogLeNet 网络的各种超参数，研究其产生的影响
+=======
+:date: 2021-10-29：通过调整 ？ 各种超参数，研究其产生的影响
+>>>>>>> 5f0fbd3791b40732ece9f7318b194cf5ed97b1b9
